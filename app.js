@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const MONGO_URL = process.env.MONGO_URL;
   
   const express = require("express");
   const app = express();
@@ -12,7 +12,7 @@ require("dotenv").config();
   const ExpressError=require("./utils/ExpressError.js");
   const {ListingSchema, reviewSchema}= require("./schema.js");
   const Review=require("./models/review.js");
-  const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+  // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
   const listingRouter=require("./routes/listing.js")
   const reviewRouter=require("./routes/review.js");
@@ -25,17 +25,20 @@ require("dotenv").config();
   const User=require("./models/user.js");
 
 
-  const dbUrl=process.env.ATLASDB_URL;
-  main() 
-  .then(()=>{
-    console.log("Connected to DB");
-  })
-  .catch((err)=>{
-    console.log(err)
-  });
-   async function main() {
-    await mongoose.connect(MONGO_URL);
-   }
+  // const dbUrl=process.env.ATLASDB_URL;
+  // main() 
+  // .then(()=>{
+  //   console.log("Connected to DB");
+  // })
+  // .catch((err)=>{
+  //   console.log(err)
+  // });
+  //  async function main() {
+  //   await mongoose.connect(MONGO_URL);
+  //  }
+  mongoose.connect(MONGO_URL)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("Connection error", err));
 
 
   app.set("view engine","ejs");
