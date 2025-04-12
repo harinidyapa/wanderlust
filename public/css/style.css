@@ -1,0 +1,255 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+    height: auto;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Always display navbar items, hide toggler */
+.navbar-collapse {
+    display: flex !important;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    display: none !important;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+.nav-link {
+    color: #222222 !important;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+/* Footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+.f-info-links, .f-info-socials {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.f-info {
+    text-align: center;
+    height: 6rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    height: 15rem;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+.add-btn,
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    color: white;
+}
+
+/* Show Page */
+.show-img {
+    height: 35vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Map */
+#map {
+    height: 400px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.maplibregl-popup {
+    z-index: 9999 !important;
+}
+.maplibregl-popup-close-button {
+    pointer-events: auto;
+}
+
+/* ---------------------- RESPONSIVE QUERIES ---------------------- */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .navbar-collapse {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .listing-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .btns {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .f-info {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .f-info-links,
+    .f-info-socials {
+        flex-direction: column;
+    }
+
+    .card-img-top {
+        height: 12rem;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 0.95rem;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+    }
+
+    .card-img-top {
+        height: 11rem;
+    }
+
+    .fa-compass {
+        font-size: 1.6rem;
+    }
+
+    .listing-card {
+        margin: 1rem;
+    }
+
+    .btns {
+        gap: 0.5rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .card-img-top {
+        height: 10rem;
+    }
+
+    .fa-compass {
+        font-size: 1.4rem;
+    }
+}
