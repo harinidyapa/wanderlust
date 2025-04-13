@@ -84,18 +84,7 @@ store.on("error",()=>{
   passport.deserializeUser(User.deserializeUser());
 
 
-  // app.get("/", (req, res) => {
-  //   res.send("Hi, I am root");
-  // });
-
-// app.get("/demouser",async(req,res)=>{
-//   let fakeuser=new User({
-//     email:"student@gmail.com",
-//     username:"delta-student"
-//   });
-//   let registeredUser= await User.register(fakeuser,"helloworld");
-//   res.send(registeredUser);
-// })
+  
 
   app.use((req,res,next)=>{
     res.locals.successMsg=req.flash("success");
@@ -105,6 +94,9 @@ store.on("error",()=>{
   })
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 app.use("/",userRouter);
 
   app.all("*",(req,res,next)=>{
