@@ -210,39 +210,51 @@ body {
     .card-img-top {
         height: 12rem;
     }
+
+    .nav-link {
+        font-size: 1rem; /* Adjust size of navbar items for tablets */
+    }
 }
 
-/* Mobile devices */
+/* Mobile devices (below 768px) */
 @media (max-width: 768px) {
-    .nav-link {
-        font-size: 0.95rem;
+    /* Hide the search input and button on smaller screens */
+    .search-inp,
+    .btn-search {
+        display: none;
     }
 
+    /* Adjust the navbar items to be on the same line */
     .navbar-nav {
-        justify-content: center;
+        flex-direction: row; /* Arrange navbar items in a row */
+        gap: 1rem; /* Add some spacing between items */
     }
 
-    .card-img-top {
-        height: 11rem;
+    .nav-link {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+
+    .navbar-collapse {
+        justify-content: space-between; /* Space out navbar items */
     }
 
     .fa-compass {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .listing-card {
         margin: 1rem;
     }
 
-    .btns {
-        gap: 0.5rem;
+    .card-img-top {
+        height: 11rem;
     }
 }
 
-/* Small mobile */
+/* Small mobile screens (below 480px) */
 @media (max-width: 480px) {
     .nav-link {
-        font-size: 0.9rem;
+        font-size: 0.8rem; /* Smaller font size for small mobile */
     }
 
     .card-img-top {
@@ -250,6 +262,6 @@ body {
     }
 
     .fa-compass {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 }

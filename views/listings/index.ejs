@@ -1,25 +1,29 @@
 <% layout("/layouts/boilerplate") %>
 
 <style>
-  #filters{
+  #filters {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
-  .filter{
+
+  .filter {
     text-align: center;
     margin-right: 2rem;
     margin-top: 2rem;
     opacity: 0.7;
   }
-  .filter:hover{
+
+  .filter:hover {
     opacity: 1;
     cursor: pointer;
   }
-  .filter p{
+
+  .filter p {
     font-size: 0.8rem;
   }
-  .tax-toggle{
+
+  .tax-toggle {
     border: 1px solid black;
     border-radius: 1rem;
     height: 3.2rem;
@@ -28,8 +32,43 @@
     display: flex;
     align-items: center;
   }
-  .tax-info{
+
+  .tax-info {
     display: none;
+  }
+
+  /* Mobile and tablet responsiveness */
+  @media (max-width: 768px) {
+    #filters {
+      display: none; /* Hide filters on smaller screens */
+    }
+
+    .listing-card {
+      margin-bottom: 1.5rem; /* Adjust spacing between listing cards */
+    }
+
+    .card-img-top {
+      height: 15rem; /* Adjust image size on smaller screens */
+    }
+
+    .card-body {
+      padding: 1rem; /* Padding adjustments for card body */
+    }
+  }
+
+  /* Desktop screens (medium and larger) */
+  @media (min-width: 769px) {
+    .listing-card {
+      width: 100%; /* Allow cards to be full-width on medium screens and larger */
+    }
+
+    .card-img-top {
+      height: 20rem; /* Image height for desktop */
+    }
+
+    .card-body {
+      padding: 1.5rem; /* Padding for desktop */
+    }
   }
 </style>
 

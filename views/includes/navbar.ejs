@@ -35,6 +35,10 @@
   font-weight: 500;
 }
 
+.under:hover{
+    text-decoration: underline;
+}
+
     
 </style>
 
@@ -63,11 +67,11 @@
             <div class="navbar-nav ms-auto">
                 <div class="airbnb"><a class="nav-link" href="/listings/new" >Airbnb your home</a></div>
                 <% if(!currUser) { %>
-                <a class="nav-link" href="/signup"><b>SignUp</b></a>
-                <a class="nav-link" href="/login"><b>Login</b></a>
+                <a class="nav-link under" href="/signup"><b>SignUp</b></a>
+                <a class="nav-link under" href="/login"><b>Login</b></a>
                 <% } %>
                 <% if(currUser) { %>
-                <a class="nav-link" href="/logout"><b>Logout</b></a>
+                <a class="nav-link under" href="/logout"><b>Logout</b></a>
                 <% } %>
             </div>
         </div>
