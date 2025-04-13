@@ -38,7 +38,12 @@
 .under:hover{
     text-decoration: underline;
 }
-
+@media (max-width: 768px){
+    .search-inp,
+    .btn-search {
+        display: none !important;
+    }
+}
     
 </style>
 
@@ -51,7 +56,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 
-                <a class="nav-link" href="/listings" style="font-size: 1.2rem;">Explore</a>
+                <a class="nav-link under" href="/listings" style="font-size: 1.2rem;">Explore</a>
             
             </div>
             <div class="navbar-nav ms-auto">
